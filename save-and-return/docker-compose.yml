@@ -1,0 +1,27 @@
+# This file only contains base configuration needed for CI build and test
+# For local development environment please see docker-compose.dev.yml
+version: "3.9"
+services:
+  runner:
+    container_name: runner
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: ./runner/Dockerfile
+    ports:
+      - "3009:3009"
+    environment:
+      - SAFELIST=["localhost", "host.docker.internal", "api"]
+    command: yarn runner start
+
+  api:
+    container_name: api
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - SELF_URL=http://api:3000
+      - RUNNER_URL=http://runner:3009
