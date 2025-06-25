@@ -1,0 +1,110 @@
+{
+  "startPage": "/start",
+  "pages": [
+    {
+      "title": "Start",
+      "path": "/start",
+      "components": [],
+      "next": [
+        {
+          "path": "/what-is-your-name"
+        }
+      ],
+      "controller": "./pages/start.js"
+    },
+    {
+      "path": "/what-is-your-name",
+      "components": [
+        {
+          "type": "TextField",
+          "name": "name",
+          "title": "What is your name?",
+          "options": {},
+          "schema": {}
+        }
+      ],
+      "section": "checkBeforeYouStart",
+      "next": [
+        {
+          "path": "/what-is-your-favourite-egg"
+        }
+      ],
+      "title": "What is your name?"
+    },
+    {
+      "path": "/what-is-your-favourite-egg",
+      "title": "What is your favourite egg?",
+      "components": [
+        {
+          "title": "What is your favourite egg",
+          "type": "TextField",
+          "name": "favouriteEgg",
+          "options": {
+            "required": true
+          },
+          "schema": {}
+        }
+      ],
+      "next": [
+        {
+          "path": "/summary"
+        }
+      ]
+    },
+    {
+      "path": "/summary",
+      "controller": "./pages/summary.js",
+      "title": "Summary",
+      "components": [],
+      "next": []
+    }
+  ],
+  "lists": [
+    {
+      "name": "numberOfApplicants",
+      "title": "Number of people",
+      "type": "number",
+      "items": [
+        {
+          "text": "1",
+          "value": 1,
+          "description": "",
+          "condition": ""
+        },
+        {
+          "text": "2",
+          "value": 2,
+          "description": "",
+          "condition": ""
+        },
+        {
+          "text": "3",
+          "value": 3,
+          "description": "",
+          "condition": ""
+        },
+        {
+          "text": "4",
+          "value": 4,
+          "description": "",
+          "condition": ""
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "name": "applicantDetails",
+      "title": "Applicant details"
+    }
+  ],
+  "phaseBanner": {
+    "phase": "beta"
+  },
+  "fees": [],
+  "payApiKey": "",
+  "outputs": [],
+  "declaration": "<p class=\"govuk-body\">All the answers you have provided are true to the best of your knowledge.</p>",
+  "version": 2,
+  "conditions": []
+}
